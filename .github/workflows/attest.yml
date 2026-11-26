@@ -1,0 +1,43 @@
+name: attest-release
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+permissions: {}
+jobs:
+  attest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    steps:
+      - name: Fetch the exact commit
+        run: |
+          git init -q src
+          git -C src fetch -q --depth 1 "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git" "$GITHUB_SHA"
+          git -C src checkout -q FETCH_HEAD
+      - name: Verify the tree and every archive against manifest.json
+        working-directory: src
+        run: |
+          python3 -I - <<'PY'
+          import hashlib, json, pathlib, subprocess, sys
+          manifest = json.loads(pathlib.Path("manifest.json").read_text(encoding="utf-8"))
+          archives = {t["archive"]: t for t in manifest["targets"].values()}
+          expected = {"README.md", "LICENSE", "manifest.json", ".github/workflows/attest.yml", *archives}
+          tracked = set(subprocess.run(["git", "ls-files"], check=True, capture_output=True, text=True).stdout.split())
+          if tracked != expected:
+              sys.exit(f"tree mismatch: extra={sorted(tracked - expected)} missing={sorted(expected - tracked)}")
+          for name, target in sorted(archives.items()):
+              data = pathlib.Path(name).read_bytes()
+              if len(data) != target["bytes"] or hashlib.sha256(data).hexdigest() != target["sha256"]:
+                  sys.exit(f"digest mismatch: {name}")
+              print(f"OK {target['sha256']}  {name}")
+          print("TREE_AND_ARCHIVES_OK")
+          PY
+      - name: Attest the archives and the manifest
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: |
+            src/*.zip
+            src/manifest.json

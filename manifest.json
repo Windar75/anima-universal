@@ -1,0 +1,148 @@
+{
+  "format": 1,
+  "memory_source": {
+    "path": "anima-memory-drive/SKILL.md",
+    "sha256": "50594ac59a6d6e54a73ae3303d83174f4a92ff253e10023ad5314d04d1c42f42"
+  },
+  "name": "anima-universal-public",
+  "source": {
+    "path": "anima-universal-public/SKILL.md",
+    "sha256": "7d7b87808dc8290056e1b99bee3b604e1cebcc9700a4d509ae5a7f26e6f2575e"
+  },
+  "targets": {
+    "antigravity": {
+      "archive": "anima-universal-public-0.1.0-rc.2-antigravity.zip",
+      "bytes": 14183,
+      "files": {
+        "plugin.json": {
+          "bytes": 371,
+          "sha256": "57ef5df1cda7f4e589259d7baf7a1fe4f314197d6a4e9ac8bb0e738c1619e232"
+        },
+        "skills/anima-memory-drive/SKILL.md": {
+          "bytes": 8157,
+          "sha256": "50594ac59a6d6e54a73ae3303d83174f4a92ff253e10023ad5314d04d1c42f42"
+        },
+        "skills/anima-universal-public/SKILL.md": {
+          "bytes": 5239,
+          "sha256": "7d7b87808dc8290056e1b99bee3b604e1cebcc9700a4d509ae5a7f26e6f2575e"
+        }
+      },
+      "sha256": "08a1b6f72281b2a89c5279dae70d39863c7a98684f0e38f9f4ffc247d031a907"
+    },
+    "chatgpt-codex": {
+      "archive": "anima-universal-public-0.1.0-rc.2-chatgpt-codex.zip",
+      "bytes": 15414,
+      "files": {
+        ".codex-plugin/plugin.json": {
+          "bytes": 673,
+          "sha256": "389788461ab26aafbdc7011739b3712dc6b6c085d59c13362524c37836f76d3f"
+        },
+        "plugin.json": {
+          "bytes": 803,
+          "sha256": "61c3c841d21126e595d1266a2abc163d703d2fa02b19a0f42801bd62e74e1ea1"
+        },
+        "skills/anima-memory-drive/SKILL.md": {
+          "bytes": 8157,
+          "sha256": "50594ac59a6d6e54a73ae3303d83174f4a92ff253e10023ad5314d04d1c42f42"
+        },
+        "skills/anima-universal-public/SKILL.md": {
+          "bytes": 5239,
+          "sha256": "7d7b87808dc8290056e1b99bee3b604e1cebcc9700a4d509ae5a7f26e6f2575e"
+        }
+      },
+      "sha256": "073941508b9dd6ea9db5f39e5b3d504ff7be28ab42e57210fa39ebd83422eb64"
+    },
+    "claude-code-marketplace": {
+      "archive": "anima-universal-public-0.1.0-rc.2-claude-code-marketplace.zip",
+      "bytes": 14978,
+      "files": {
+        ".claude-plugin/marketplace.json": {
+          "bytes": 536,
+          "sha256": "effa38ae08d1f9970fbb6150bad8c5b8d06688ec40d88f0d4dc9b0e51a8654af"
+        },
+        "plugins/anima-universal-public/.claude-plugin/plugin.json": {
+          "bytes": 276,
+          "sha256": "baf67d25f0eb6947383dd0681f75e5229b41af82ada5ede942871186da9d2c78"
+        },
+        "plugins/anima-universal-public/skills/anima-memory-drive/SKILL.md": {
+          "bytes": 8157,
+          "sha256": "50594ac59a6d6e54a73ae3303d83174f4a92ff253e10023ad5314d04d1c42f42"
+        },
+        "plugins/anima-universal-public/skills/anima-universal-public/SKILL.md": {
+          "bytes": 5239,
+          "sha256": "7d7b87808dc8290056e1b99bee3b604e1cebcc9700a4d509ae5a7f26e6f2575e"
+        }
+      },
+      "sha256": "bc2e84e40e77cc35c8ba4f86d32e073112181b5c6b4ebfa2cecf6a7af4282c2a"
+    },
+    "claude-plugin": {
+      "archive": "anima-universal-public-0.1.0-rc.2-claude-plugin.zip",
+      "bytes": 14118,
+      "files": {
+        ".claude-plugin/plugin.json": {
+          "bytes": 276,
+          "sha256": "baf67d25f0eb6947383dd0681f75e5229b41af82ada5ede942871186da9d2c78"
+        },
+        "skills/anima-memory-drive/SKILL.md": {
+          "bytes": 8157,
+          "sha256": "50594ac59a6d6e54a73ae3303d83174f4a92ff253e10023ad5314d04d1c42f42"
+        },
+        "skills/anima-universal-public/SKILL.md": {
+          "bytes": 5239,
+          "sha256": "7d7b87808dc8290056e1b99bee3b604e1cebcc9700a4d509ae5a7f26e6f2575e"
+        }
+      },
+      "sha256": "a3cff6517cc7d166cf64d5ff979ba5e6617551229d8aec23f47178c1115a24d9"
+    },
+    "claude-skill": {
+      "archive": "anima-universal-public-0.1.0-rc.2-claude-skill.zip",
+      "bytes": 5399,
+      "files": {
+        "anima-universal-public/SKILL.md": {
+          "bytes": 5239,
+          "sha256": "7d7b87808dc8290056e1b99bee3b604e1cebcc9700a4d509ae5a7f26e6f2575e"
+        }
+      },
+      "sha256": "3015629b33b23906881659c131474bf7d377258e8997cf8fdbe8aa8f6b1b0173"
+    },
+    "claude-skill-memory": {
+      "archive": "anima-universal-public-0.1.0-rc.2-claude-skill-memory.zip",
+      "bytes": 8309,
+      "files": {
+        "anima-memory-drive/SKILL.md": {
+          "bytes": 8157,
+          "sha256": "50594ac59a6d6e54a73ae3303d83174f4a92ff253e10023ad5314d04d1c42f42"
+        }
+      },
+      "sha256": "ba2fe85e82ce04a62b448d1ad15cdaab53148f8019e408c3e13b5c8ea0d3c716"
+    },
+    "codex-local-marketplace": {
+      "archive": "anima-universal-public-0.1.0-rc.2-codex-local-marketplace.zip",
+      "bytes": 16199,
+      "files": {
+        ".agents/plugins/marketplace.json": {
+          "bytes": 397,
+          "sha256": "04a6263565e789c62a1f5f0deac7ccac466ccceaa3f24a8aa05f2bd236bc5381"
+        },
+        "plugins/anima-universal-public/.codex-plugin/plugin.json": {
+          "bytes": 673,
+          "sha256": "389788461ab26aafbdc7011739b3712dc6b6c085d59c13362524c37836f76d3f"
+        },
+        "plugins/anima-universal-public/plugin.json": {
+          "bytes": 803,
+          "sha256": "61c3c841d21126e595d1266a2abc163d703d2fa02b19a0f42801bd62e74e1ea1"
+        },
+        "plugins/anima-universal-public/skills/anima-memory-drive/SKILL.md": {
+          "bytes": 8157,
+          "sha256": "50594ac59a6d6e54a73ae3303d83174f4a92ff253e10023ad5314d04d1c42f42"
+        },
+        "plugins/anima-universal-public/skills/anima-universal-public/SKILL.md": {
+          "bytes": 5239,
+          "sha256": "7d7b87808dc8290056e1b99bee3b604e1cebcc9700a4d509ae5a7f26e6f2575e"
+        }
+      },
+      "sha256": "01fe7ae5e4ad8009c65467b2122985beba81f7226ac27c1de644794e689ac83c"
+    }
+  },
+  "version": "0.1.0-rc.2"
+}
