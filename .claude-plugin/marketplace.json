@@ -1,0 +1,14 @@
+{
+  "description": "Anima∞ è un profilo operativo eseguito dal modello dell'host. Usalo per verificare un'ipotesi, sviluppare un'idea o portare a termine un lavoro.",
+  "name": "anima-universal",
+  "owner": {
+    "name": "Anima∞"
+  },
+  "plugins": [
+    {
+      "description": "Anima∞ è un profilo operativo eseguito dal modello dell'host. Usalo per verificare un'ipotesi, sviluppare un'idea o portare a termine un lavoro.",
+      "name": "anima-universal-public",
+      "source": "./plugins/anima-universal-public"
+    }
+  ]
+}

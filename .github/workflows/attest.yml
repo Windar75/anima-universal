@@ -24,7 +24,9 @@ jobs:
           import hashlib, json, pathlib, subprocess, sys
           manifest = json.loads(pathlib.Path("manifest.json").read_text(encoding="utf-8"))
           archives = {t["archive"]: t for t in manifest["targets"].values()}
-          expected = {"README.md", "LICENSE", "manifest.json", ".github/workflows/attest.yml", *archives}
+          # Repository-root catalog: byte-identical to the claude-code-marketplace archive members.
+          root = manifest["targets"]["claude-code-marketplace"]["files"]
+          expected = {"README.md", "LICENSE", "manifest.json", ".github/workflows/attest.yml", *archives, *root}
           tracked = set(subprocess.run(["git", "ls-files"], check=True, capture_output=True, text=True).stdout.split())
           if tracked != expected:
               sys.exit(f"tree mismatch: extra={sorted(tracked - expected)} missing={sorted(expected - tracked)}")
@@ -33,6 +35,11 @@ jobs:
               if len(data) != target["bytes"] or hashlib.sha256(data).hexdigest() != target["sha256"]:
                   sys.exit(f"digest mismatch: {name}")
               print(f"OK {target['sha256']}  {name}")
+          for name, member in sorted(root.items()):
+              data = pathlib.Path(name).read_bytes()
+              if len(data) != member["bytes"] or hashlib.sha256(data).hexdigest() != member["sha256"]:
+                  sys.exit(f"root catalog mismatch: {name}")
+              print(f"OK {member['sha256']}  {name}")
           print("TREE_AND_ARCHIVES_OK")
           PY
       - name: Attest the archives and the manifest

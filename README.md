@@ -1,4 +1,4 @@
-# Anima∞ — anteprima 0.1.0-rc.2
+# Anima∞ — anteprima 0.1.0-rc.3
 
 Anima∞ è un profilo operativo eseguito dal modello dell'assistente che già usi. Il pacchetto contiene solo testo:
 due skill, nessun programma, nessun server, nessun accesso ad account altrui.
@@ -6,6 +6,18 @@ due skill, nessun programma, nessun server, nessun accesso ad account altrui.
 - anima-universal-public: metodo operativo per verificare un'ipotesi, sviluppare un'idea o portare a termine un lavoro.
 - anima-memory-drive: memoria personale che resta nel tuo Google Drive, letta e scritta dal connettore Drive del tuo
   assistente. La skill chiede il tuo consenso prima di creare la cartella. Nessun dato arriva all'autore.
+
+## Installazione rapida (Claude Code)
+Tre passi: accesso a questo repository, autorizzazione del tuo Google Drive, un comando di attivazione.
+1. Aggiungi il catalogo direttamente da questo repository e installa il plugin:
+   claude plugin marketplace add Windar75/anima-universal
+   claude plugin install anima-universal-public@anima-universal
+2. Collega Google Drive al tuo assistente (connettore dell'host). Senza Drive il metodo funziona senza memoria.
+3. Comando di attivazione: dai una prima informazione da ricordare, per esempio «ricorda che preferisco risposte
+   brevi». La skill chiede se creare la memoria; con il tuo sì crea indice e note nel tuo Drive e da lì in poi le usa.
+Ripetere i comandi non crea duplicati. Per rimuovere: claude plugin uninstall anima-universal-public
+Se avevi installato la 0.1.0-rc.2 dal catalogo locale estratto: prima claude plugin marketplace remove anima-universal,
+poi i due comandi del passo 1. Per tornare alla versione precedente si fa lo stesso con il catalogo di quella versione.
 
 ## Archivi della release
 | Archivio | Per |
@@ -24,13 +36,14 @@ Se non coincide, non installarlo.
 
 ## Compatibilità
 Verificata (prove registrate dall'autore il 25 e 26 novembre 2026):
+- Claude Code (CLI): installazione del plugin dal catalogo, reinstallazione senza duplicati, disinstallazione e
+  ripristino, con configurazione vuota. Attivazione spontanea della skill non ancora misurata.
 - Claude (app): skill di memoria installata; lettura, scrittura, consolidamento e ripristino della memoria sul Drive.
   Verificata con il testo della skill installato nell'account dell'autore, non ancora installando questi archivi.
 - ChatGPT: lettura della memoria sul Drive (indice, preferenze, decisioni). Solo lettura.
 
 Sperimentale (non ancora provata, procedura prevista):
 - Claude: caricamento dell'archivio claude-skill del metodo dalle impostazioni delle skill.
-- Claude Code: catalogo locale dalla cartella estratta di claude-code-marketplace, poi installazione del plugin.
 - Codex: catalogo locale dalla cartella estratta di codex-local-marketplace, poi installazione del plugin.
 - ChatGPT: plugin chatgpt-codex dal portale dei plugin del tuo account, se il piano lo consente; scrittura della memoria.
 - Antigravity: installazione del plugin dalla cartella estratta di antigravity.
